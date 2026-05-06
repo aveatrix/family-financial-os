@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Family Financial OS</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="text/babel">
-      import { useState, useEffect, useCallback } from "react";
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Financial OS</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useCallback } = React;
 
 // ============================================================
 // SKILL DATA WITH FULL GUIDANCE LAYER
@@ -414,7 +414,7 @@ const loadFromStorage = () => {
 // MAIN APP
 // ============================================================
 
-export default function ParentingOS() {
+function ParentingOS() {
   const [loaded, setLoaded] = useState(false);
   const [screen, setScreen] = useState("home");
   const [savedPin, setSavedPin] = useState("1234");
@@ -3902,7 +3902,7 @@ function SplashScreen() {
   );
 }
 
-export const GLOBAL_CSS = `
+const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -4128,9 +4128,7 @@ const S = {
 
   parentChildCard: { display: "flex", alignItems: "center", gap: 12, background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: 14, marginBottom: 10 },
 };
-    </script>
-    <script type="text/babel">
-      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-    </script>
-  </body>
+ReactDOM.createRoot(document.getElementById('root')).render(<ParentingOS />);
+</script>
+</body>
 </html>
